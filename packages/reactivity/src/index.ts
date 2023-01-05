@@ -1,10 +1,14 @@
 /*
  * @Description  :
  * @Author       : chenguo666
- * @FilePath     : \vue3 pnpm\packages\reactivity\src\index.ts
+ * @FilePath     : \vue3_sourceCode_learning\packages\reactivity\src\index.ts
  * @Date         : 2022-12-28 19:35:48
- * @LastEditors  : chenguo666 cg1305378470@163.com
- * @LastEditTime : 2022-12-30 19:08:27
+ * @LastEditors  : fruitchan 1305378470@qq.com
+ * @LastEditTime : 2023-01-04 14:16:38
  */
-import { isObject } from "@vue/shared";
-console.log(isObject({}));
+// import { isObject } from "@vue/shared";
+// console.log(isObject({}));
+export { effect } from "./effect";
+export { reactive } from "./reactive";
+export { computed } from "./computed";
+export { ref } from "./ref";

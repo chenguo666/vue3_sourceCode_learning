@@ -1,0 +1,68 @@
+<!--
+ * @Description  :  
+ * @Author       : fruitchan
+ * @FilePath     : \vue3_sourceCode_learning\packages\reactivity\examples\index.html
+ * @Date         : 2023-01-02 10:21:17
+ * @LastEditors  : fruitchan 1305378470@qq.com
+ * @LastEditTime : 2023-01-04 14:30:46
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script src="../dist/reactivity.global.js"></script>
+    <script>
+      const { reactive, effect, computed, ref } = VueReactivity;
+      let obj = { name: "asdf", age: 26 };
+      // const state = reactive(obj);
+      // const state = ref(obj);
+      const state = ref(0);
+      console.log(state);
+      effect(() => {
+        console.log(state.value);
+      });
+      setTimeout(() => {
+        state.value++;
+      }, 3000);
+      //   const state2 = reactive(obj);
+      //   console.log("state", state1 === state2);
+      //   console.log(reactive(state1) === state2);
+      //   执行过程是默认执行一次 使用的数据更新了 会再次执行
+      // effect(() => {
+      //   app.innerHTML = state.name + "年龄" + state.age;
+      // });
+      // setTimeout(() => {
+      //   state.age = 27;
+      // }, 3000);
+      // const myAge = computed({
+      //   get() {
+      //     console.log("runnner");
+      //     return state.age + 18;
+      //   },
+      //   set(value) {
+      //     // 依赖收集是取值的时候收集 set不需要
+      //     console.log(value);
+      //   },
+      // });
+      // effect(() => {
+      //   console.log(myAge.value);
+      //   console.log(myAge.value);
+      //   console.log(myAge.value);
+      // });
+      // setTimeout(() => {
+      //   state.age = 27;
+      // }, 3000);
+      // myAge.value = "asdf";
+      // const myAge = computed(() => {
+      //   console.log("runnner");
+      //   return state.age + 18;
+      // });
+    </script>
+  </body>
+</html>

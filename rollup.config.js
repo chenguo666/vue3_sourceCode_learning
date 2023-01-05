@@ -1,10 +1,10 @@
 /*
  * @Description  :
  * @Author       : chenguo666
- * @FilePath     : \vue3 pnpm\rollup.config.js
+ * @FilePath     : \vue3_sourceCode_learning\rollup.config.js
  * @Date         : 2022-12-29 19:27:27
- * @LastEditors  : chenguo666 cg1305378470@163.com
- * @LastEditTime : 2022-12-30 19:42:22
+ * @LastEditors  : fruitchan 1305378470@qq.com
+ * @LastEditTime : 2023-01-02 10:02:46
  */
 import ts from "rollup-plugin-typescript2"; // 解析ts
 import json from "@rollup/plugin-json"; // 解析json
@@ -36,8 +36,8 @@ const outputConfig = {
     format: "iife",
   },
 };
-// const packageConfigs = packageFormats || pkg.buildOptions.formats;
-const packageConfigs = pkg.buildOptions.formats;
+const packageConfigs = packageFormats || pkg.buildOptions.formats;
+// const packageConfigs = pkg.buildOptions.formats;
 function createConfig(format, output) {
   output.scourcemap = scourcemap;
   // output.exports = "named";
