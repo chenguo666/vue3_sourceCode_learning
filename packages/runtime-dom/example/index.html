@@ -1,0 +1,55 @@
+<!--
+ * @Description  :  
+ * @Author       : fruitchan
+ * @FilePath     : \vue3_sourceCode_learning\packages\runtime-dom\example\index.html
+ * @Date         : 2023-01-05 13:02:12
+ * @LastEditors  : fruitchan 1305378470@qq.com
+ * @LastEditTime : 2023-01-10 13:43:38
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    runtime-dom
+    <script src="../dist/runtime-dom.global.js"></script>
+    <script>
+      let { createApp, h, ref } = VueRuntimeDOM;
+      function useCounter() {
+        const count = ref(0);
+        const add = () => {
+          // alert(111);
+          count.value++;
+        };
+        return { count, add };
+      }
+      let App = {
+        props: {
+          title: {},
+        },
+        setup(props, ctx) {
+          let { count, add } = useCounter();
+          // debugger;
+          return {
+            count,
+            add,
+          };
+        },
+        render(proxy) {
+          return h(
+            "h1",
+            { onClick: this.add, title: "chanchan", style: { color: "red" } },
+            "hello chan" + this.count.value
+          );
+        },
+      };
+      let app = createApp(App, { title: "chanchanchan", a: 1 });
+      app.mount("#app");
+    </script>
+  </body>
+</html>
